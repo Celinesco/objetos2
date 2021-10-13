@@ -1,7 +1,12 @@
 console.log("Hola Celi")
 
 
-const unicoDiv = document.getElementById("unico-div")
+const unicoDiv = document.getElementById("unico-div");
+const openFormulario = document.getElementById("open-formulario");
+const formularContainer = document.getElementById("formular-container");
+const envioFormulario = document.getElementById("enviar-formulario");
+const inputNombreUsuario = document.getElementById("nombre-usuario");
+const inputPassUsuario = document.getElementById("pass-usuario")
 
 
 // Crea tres objetos usuario1, usuario2, usuario3 que tengan las propiedades nombreUsuario y contrasenia como strings.
@@ -25,18 +30,18 @@ let usuario3 = {
 
 // Definí una función saludar que reciba como parámetro un objeto y que modifique el HTML de tu página para que aparezca un h1 que diga "Hola, {nombreUsuario}".
 
-const saludar = (objeto) => {
-    let titulo = document.createElement('h1');
-    titulo.innerHTML = `<h1>Hola ${objeto.nombreUsuario}`;
-    unicoDiv.appendChild(titulo)
-    return titulo
-}
+// const saludar = (objeto) => {
+//     let titulo = document.createElement('h1');
+//     titulo.innerHTML = `<h1>Hola ${objeto.nombreUsuario}`;
+//     unicoDiv.appendChild(titulo)
+//     return titulo
+// }
 
 //Probá tu función con los tres objetos definidos antes.
 
-console.log(saludar(usuario1))
-console.log(saludar(usuario2))
-console.log(saludar(usuario3))
+// console.log(saludar(usuario1))
+// console.log(saludar(usuario2))
+// console.log(saludar(usuario3))
 
 
 // Definí una función modificarNombreDeUsuario que reciba dos parametros: un objeto usuario y un string nuevoNombre. La función debe retornar el objeto 
@@ -50,9 +55,9 @@ let modificarNombreUsuario = (usuario, nuevoNombre) => {
 
 // Probá tu función con los tres objetos definidos antes.
 
-console.log(modificarNombreUsuario(usuario1, "Bugs Bunny"))
-console.log(modificarNombreUsuario(usuario2, "Elmer J. Fudd"))
-console.log(modificarNombreUsuario(usuario3, "Honey Bunny"))
+// console.log(modificarNombreUsuario(usuario1, "Bugs Bunny"))
+// console.log(modificarNombreUsuario(usuario2, "Elmer J. Fudd"))
+// console.log(modificarNombreUsuario(usuario3, "Honey Bunny"))
 
 
 
@@ -68,9 +73,9 @@ const modificarContrasenia = (usuario, nuevaContrasenia) => {
 // Probá tu función con los tres objetos definidos antes.
 
 
-console.log(modificarContrasenia(usuario1, "Karroten"))
-console.log(modificarContrasenia(usuario2, "Schrotflinte"))
-console.log(modificarContrasenia(usuario3, "Möhre"))
+// console.log(modificarContrasenia(usuario1, "Karroten"))
+// console.log(modificarContrasenia(usuario2, "Schrotflinte"))
+// console.log(modificarContrasenia(usuario3, "Möhre"))
 
 
 // Crea la función convertirAJSON. La función debe recibir un objeto usuario como parámetro y retornar el objeto convertido a JSON.
@@ -80,9 +85,9 @@ const convertirAJSON = (objeto) => {
      return objetoConvertido
 }
 
-console.log(convertirAJSON(usuario1))
-console.log(convertirAJSON(usuario2))
-console.log(convertirAJSON(usuario3))
+// console.log(convertirAJSON(usuario1))
+// console.log(convertirAJSON(usuario2))
+// console.log(convertirAJSON(usuario3))
 
 // Crea la función convertirDesdeJSON. La función debe recibir una cadena JSON objetoJSON y retornar la cadena convertida a un objeto de Javascript.
 
@@ -93,9 +98,9 @@ const convertirDesdeJSON = (objetoJSON) => {
 
 // Probá tus funciones con los tres objetos definidos antes.
 
-console.log(convertirDesdeJSON(convertirAJSON(usuario1)))
-console.log(convertirDesdeJSON(convertirAJSON(usuario2)))
-console.log(convertirDesdeJSON(convertirAJSON(usuario3)))
+// console.log(convertirDesdeJSON(convertirAJSON(usuario1)))
+// console.log(convertirDesdeJSON(convertirAJSON(usuario2)))
+// console.log(convertirDesdeJSON(convertirAJSON(usuario3)))
 
 
 // Definí la función guardarEnLocalStorage que reciba como parámetro un objeto de Javascript y un string, 
@@ -116,4 +121,33 @@ const leerDesdeLocalStorage = (clave) => {
 }
 
 
+//EJERCITACIÓN INTEGRADORA 
 
+// Crea una pagina que tenga un titulo que diga "Hola!" y un botón que diga "Iniciar sesión"
+
+// Al hacer click en el botón Iniciar Sesión, debe hacerse visible un formulario con un campo usuario y otro contraseña,
+// y un botón para enviar el form.
+
+let nuevoObjeto = {
+    nombre: "lala",
+    pass: "lala",
+
+}
+
+openFormulario.onclick = () => {
+    formularContainer.classList.remove("ocultar");
+}
+
+envioFormulario.onclick = () => {
+    console.log(inputNombreUsuario.value)
+    console.log(inputPassUsuario.value)
+
+    if (inputNombreUsuario.value === nuevoObjeto.nombre 
+        && inputPassUsuario === nuevoObjeto.pass) {
+        console.log(`Bienvenido`)
+    }
+    else {
+        console.log("Algo salió mal")
+    }
+
+}
