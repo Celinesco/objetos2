@@ -6,7 +6,7 @@ const openFormulario = document.getElementById("open-formulario");
 const formularContainer = document.getElementById("formular-container");
 const envioFormulario = document.getElementById("enviar-formulario");
 const inputNombreUsuario = document.getElementById("nombre-usuario");
-const inputPassUsuario = document.getElementById("pass-usuario")
+const inputPassUsuario = document.getElementById("pass-usuario");
 
 
 // Crea tres objetos usuario1, usuario2, usuario3 que tengan las propiedades nombreUsuario y contrasenia como strings.
